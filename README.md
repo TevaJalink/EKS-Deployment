@@ -45,5 +45,5 @@ Can use the following code snip:
 ~~~
 git pull https://github.com/TevaJalink/EKS-Deployment
 Terrafrom init
-terraform apply -auto-approve
+Terraform apply -auto-approve
 ~~~
