@@ -29,3 +29,4 @@ The EKS-Nginx-Resources module provisions the modules inside the EKS cluster.
 5. HPA - horizontl pod autoscaling, monitors the nginx deployment CPU usage and deploys or removes pods.
 6. PDB - pod distribution budget is used the limit the amount of unavailable pods.
 7. Cluster Autoscaler - used to scale the cluster nodes if needed.
+8. Network Policy - used to limit the access to the nginx deployment pods.
