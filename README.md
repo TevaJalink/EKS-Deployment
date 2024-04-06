@@ -48,3 +48,16 @@ cd ./EKS-Deployment
 Terrafrom init
 Terraform apply -auto-approve
 ~~~
+
+### Importent Note
+Running the solution already configures the kubectl to work with the provisioned cluster, but make sure the kubectl.exe file is rightfuly placed in the PATH environment variables.
+
+If for some reasone the kubectl is not configured the work with the cluster please run the following command:
+~~~
+aws eks --region <region> update-kubeconfig --name <eks-cluster-name>
+~~~
+
+In addition, you can run the following command to get the service public dns record (please note that this is a http endpoint and not https):
+~~~
+kubectl get svc -A
+~~~
