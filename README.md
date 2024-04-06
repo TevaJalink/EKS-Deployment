@@ -38,5 +38,5 @@ Follow the following order to execute the solution.
 
 1. Pull the repository using git commands.
 2. Optional - create a remote state block.
-3. run terraform init to initialize terraform.
-4. run terraform apply to start provisioning process.
+3. Run terraform init to initialize terraform.
+4. Run terraform apply to start provisioning process.
