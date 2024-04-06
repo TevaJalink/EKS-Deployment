@@ -44,6 +44,7 @@ Follow the following order to execute the solution.
 Can use the following code snip:
 ~~~
 git pull https://github.com/TevaJalink/EKS-Deployment
+cd ./EKS-Deployment
 Terrafrom init
 Terraform apply -auto-approve
 ~~~
