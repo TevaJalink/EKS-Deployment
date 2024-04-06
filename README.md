@@ -2,10 +2,11 @@
 In the following document i will give an explanation about the infrastructure design and deployment process of the EKS cluster and the Nginx web page.
 
 ## Prerequisites
-In order to deploy the solution 3 prerequisites are required:
+In order to deploy the solution 4 prerequisites are required:
 1. AWS CLIv2 - required in order to run the local-exec commands for the ECR authentication.
 2. Docker engine - used for docker command and image manipulation.
 3. kubectl - the code deployment currently deploys version 1.29 of kubernetes so the kubectl should be compatible.
+4. Terraform - terraform current latest version is 1.7.5 but every terraform version higher then 1.3 will work.
 
 ## EKS-Infra module
 The EKS-infra module provisions all the infrastructure needed to deploy a EKS cluster.
@@ -30,3 +31,33 @@ The EKS-Nginx-Resources module provisions the modules inside the EKS cluster.
 6. PDB - pod distribution budget is used the limit the amount of unavailable pods.
 7. Cluster Autoscaler - used to scale the cluster nodes if needed.
 8. Network Policy - used to limit the access to the nginx deployment pods.
+
+
+## Execution Steps
+Follow the following order to execute the solution.
+
+1. Pull the repository using git commands.
+2. Optional - create a remote state block.
+3. Run terraform init to initialize terraform.
+4. Run terraform apply to start provisioning process.
+
+Can use the following code snip:
+~~~
+git pull https://github.com/TevaJalink/EKS-Deployment
+cd ./EKS-Deployment
+Terrafrom init
+Terraform apply -auto-approve
+~~~
+
+### Importent Note
+Running the solution already configures the kubectl to work with the provisioned cluster, but make sure the kubectl.exe file is rightfuly placed in the PATH environment variables.
+
+If for some reasone the kubectl is not configured the work with the cluster please run the following command:
+~~~
+aws eks --region <region> update-kubeconfig --name <eks-cluster-name>
+~~~
+
+In addition, you can run the following command to get the service public dns record (please note that this is a http endpoint and not https):
+~~~
+kubectl get svc -A
+~~~
