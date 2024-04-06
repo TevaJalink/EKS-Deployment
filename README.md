@@ -6,7 +6,7 @@ In order to deploy the solution 4 prerequisites are required:
 1. AWS CLIv2 - required in order to run the local-exec commands for the ECR authentication.
 2. Docker engine - used for docker command and image manipulation.
 3. kubectl - the code deployment currently deploys version 1.29 of kubernetes so the kubectl should be compatible.
-4. Terraform - terraform current latest version is 1.7.5 but every terraform versin higher then 1.3 will work.
+4. Terraform - terraform current latest version is 1.7.5 but every terraform version higher then 1.3 will work.
 
 ## EKS-Infra module
 The EKS-infra module provisions all the infrastructure needed to deploy a EKS cluster.
