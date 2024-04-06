@@ -12,6 +12,7 @@ variable "cluster_name" {
 
 variable "VPC_Name" {
   type        = string
+  default     = "EKS_VPC"
   description = "The AWS VPC name"
 }
 
